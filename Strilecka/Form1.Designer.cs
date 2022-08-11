@@ -326,11 +326,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkBlue;
             this.ClientSize = new System.Drawing.Size(500, 500);
+            this.Controls.Add(this.pnlMenu);
             this.Controls.Add(this.pnlGameOver);
             this.Controls.Add(this.pnlPause);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnGun);
-            this.Controls.Add(this.pnlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

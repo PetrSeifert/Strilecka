@@ -28,7 +28,7 @@ namespace Strilecka
 
         private void GameStart()
         {
-            this.BackColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
+            BackColor = Color.FromArgb(random.Next(0, 255), random.Next(0, 255), random.Next(0, 255));
             x = 250;
             score = 0;
             btnLive0.Visible = true;
@@ -56,8 +56,8 @@ namespace Strilecka
             laser.Visible = true;
             laser.Enabled = false;
             laser.FlatStyle = FlatStyle.Popup;
-            laser.Location = new System.Drawing.Point(x + 10, 0);
-            laser.Size = new System.Drawing.Size(10, 470);
+            laser.Location = new Point(x + 10, 0);
+            laser.Size = new Size(10, 470);
             laser.BackColor = Color.DarkRed;
             laser.Parent = this;
         }
@@ -67,8 +67,8 @@ namespace Strilecka
             target.Visible = true;
             target.Enabled = false;
             target.FlatStyle = FlatStyle.Popup;
-            target.Location = new System.Drawing.Point(random.Next(1, 46) * 10, random.Next(3, 40) * 10);
-            target.Size = new System.Drawing.Size(10, 10);
+            target.Location = new Point(random.Next(1, 46) * 10, random.Next(3, 40) * 10);
+            target.Size = new Size(10, 10);
             target.BackColor = Color.DarkGreen;
             target.Parent = this;
         }
@@ -99,13 +99,13 @@ namespace Strilecka
                 }
             }
 
-            if (e.KeyCode == Keys.A && x > 0)
+            if ((e.KeyCode == Keys.A || e.KeyCode == Keys.Left) && x > 0)
             {
                 laser.Visible = false;
                 x -= 10;
             }
 
-            if (e.KeyCode == Keys.D && x < 470)
+            if ((e.KeyCode == Keys.D || e.KeyCode == Keys.Right) && x < 470)
             {
                 laser.Visible = false;
                 x += 10;
@@ -168,7 +168,7 @@ namespace Strilecka
             pnlPause.Visible = false;
             pnlMenu.Visible = true;
         }
-
+         
         private void BtnRestart2_Click(object sender, EventArgs e)
         {
             pnlGameOver.Visible = false;
